@@ -1,0 +1,41 @@
+<div>
+  <div ng-controller="driverAppCtrl as abc" class="col-md-12">
+    <div  class="container col-md-12">
+      <h1>Driver App - driver id : {{driverId}}</h1><button id="refresh" ng-click="refresh()"><b>Refresh</b></button>
+    </div>
+    <div  class="container col-md-12">
+
+      <div class="container scroll-div">
+      <table datatable="" dt-options="abc.dtOptions" class="table">
+        <thead>
+        <tr class="div-unclick">
+          <th><h2>Waiting</h2></th>
+          <th><h2>Ongoing</h2></th>
+          <th><h2>Complete</h2></th>
+        </tr>
+        </thead>
+        <tbody>
+          <td ng-repeat="data in driverData.waiting">
+            <div>Req Id: {{data.request_id}}  Cust Id : {{data.customer_id}}</div><br>
+            <div>  {{data.time_lapsed}}  mins ago</div><br>
+            <button ng-click="select()"><b>Select</b></button>
+          </td>
+        <td ng-repeat="data in driverData.complete">
+          <div>Req Id: {{data.request_id}}  Cust Id : {{data.customer_id}}</div><br>
+          <div>Request: {{data.time_lapsed}} mins ago</div><br>
+          <td>Picked Up : {{data.picked_up}}</td>
+        </td>
+        <td ng-repeat="data in driverData.complete">
+          <div>Req Id: {{data.request_id}}  Cust Id : {{data.customer_id}}</div><br>
+          <div>Request: {{data.time_lapsed}} mins ago</div><br>
+          <td>Picked Up : {{data.picked_up}} mins ago</td><br>
+          <td>Complete : {{data.picked_up}} mins ago</td>
+        </td>
+        </tbody>
+      </table>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>

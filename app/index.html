@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Finance Panel</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="../bower_components/angucomplete-alt/angucomplete-alt.css">
+
+
+
+  <link rel="stylesheet" href="styles/main.css">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="../bower_components/angularjs-datepicker/dist/angular-datepicker.min.css" />
+
+  <link rel="stylesheet" href="../bower_components/bootstrap-daterangepicker/daterangepicker.css"/>
+
+
+
+
+  <!-- CSS (load bootstrap) -->
+  <style>
+    .navbar { border-radius:0; }
+  </style>
+
+  <!-- JS (load angular, ui-router, and our custom js file) -->
+
+</head>
+
+<!-- apply our angular app to our site -->
+<body ng-app="driver_frontend">
+
+<!-- NAVIGATION -->
+
+
+<!-- MAIN CONTENT -->
+<div class="fluid-container">
+
+  <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+  <div ui-view></div>
+
+</div>
+
+<script>
+  !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+      (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+    r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+  }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+</script>
+
+
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
+<script src="../bower_components/angucomplete-alt/angucomplete-alt.js"></script>
+<script src="../bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="../bower_components/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
+
+<script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<!--<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>-->
+
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+
+<script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="../bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+<script src = "../bower_components/ng-file-upload/ng-file-upload.js"></script>
+
+
+
+
+<!--custom scripts-->
+<script src="scripts/app.js?v=1.23"></script>
+<script src="scripts/services/apiService.js?v=1.23"></script>
+<script src="scripts/controllers/customerapp.js?v=1.23"></script>
+<script src="scripts/controllers/dashboard.js?v=1.23"></script>
+<script src="scripts/controllers/driverapp.js?v=1.23"></script>
+
+
+</body>
+</html>

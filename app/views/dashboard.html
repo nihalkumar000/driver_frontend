@@ -1,0 +1,31 @@
+<div>
+
+  <div ng-controller="dashboardCtrl as abc" class="col-md-12">
+    <div  class="container col-md-12" >
+      <div  class="container col-md-12" >
+        <div class="container col-md-3 scroll-div" >
+        <table datatable="" dt-options="abc.dtOptions" class="table ">
+          <thead>
+          <tr class="div-unclick">
+            <th>Request Id</th>
+            <th>Customer Id</th>
+            <th>Time Elapsed</th>
+            <th>Status</th>
+            <th>Driver</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="data in dashboardData">
+            <td>{{data.request_id}}</td>
+            <td>{{data.customer_id}}</td>
+            <td>{{data.time_elapsed}}</td>
+            <td>{{data.status}}</td>
+            <td>{{data.driver}}</td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+        </div>
+  </div>
+</div>
+</div>
