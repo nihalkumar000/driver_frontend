@@ -1,7 +1,5 @@
 driver_frontend.controller('dashboardCtrl', function ($http, $scope,$state, $stateParams, $rootScope, DTOptionsBuilder, apiService) {
-
-
-   $scope.dashboardData = [];
+  $scope.dashboardData = [];
   var vm = this;
   vm.dtOptions = DTOptionsBuilder.newOptions().withDOM('crt');
 
@@ -10,14 +8,15 @@ driver_frontend.controller('dashboardCtrl', function ($http, $scope,$state, $sta
       function (response) {
           $scope.dashboardData = response;
       },
-      function () {
+      function (err) {
         console.log('err');
+        alert(err);
       }
     );
   };
-  
+
   $scope.getDataFromServer();
-  
+
 });
 
 

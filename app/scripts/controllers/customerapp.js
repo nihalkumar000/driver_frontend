@@ -2,15 +2,14 @@ driver_frontend.controller('customerAppCtrl',function ($http,$q, $scope, $rootSc
   $scope.customerId = "";
   $scope.rideNow = function(){
     if($scope.customerId){
-        console.log($scope.customerId)
        apiService.rideNow($scope.customerId).then(
          function (response) {
            console.log(response);
            alert(response);
          },
           function (err) {
-           console.log('err');
-              alert(err);
+            console.log('err');
+            alert(err);
          });
     }
     else{

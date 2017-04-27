@@ -16,7 +16,6 @@ var driver_frontend= angular
     'datatables',
     'angucomplete-alt',
     '720kb.datepicker',
-    //'ngSanitize',
     'daterangepicker',
     'ngFileUpload'
   ]);
@@ -29,13 +28,7 @@ driver_frontend.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
-  // HOME STATES AND NESTED VIEWS ========================================
-    /*.state('login',{
-      url: '/login',
-      templateUrl: 'views/login.html',
-      controller: 'loginCtrl'
-    })
-    */.state('customerapp', {
+  .state('customerapp', {
       url: '/customerapp',
       templateUrl: 'views/customerapp.html',
       controller:'customerAppCtrl'

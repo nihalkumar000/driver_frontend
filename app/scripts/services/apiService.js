@@ -48,12 +48,12 @@ driver_frontend.service('apiService',function($http){
     );
   };
 
-  this.rideNow = function(){
-    var rideNowUrl = 'https://localhost:8029/rideNow';
+  this.rideNow = function(customerId){
+    var rideNowUrl = 'http://localhost:8026/requestRide';
     return $http({
       method: 'POST',
       url : rideNowUrl,
-      data : {},
+      data : {"customerId" : customerId},
       'headers': {
         'content-type': 'application/x-www-form-urlencoded'
       },
