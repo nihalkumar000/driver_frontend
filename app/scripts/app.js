@@ -44,3 +44,17 @@ driver_frontend.config(function($stateProvider, $urlRouterProvider) {
       controller: 'driverAppCtrl'
     })
 });
+
+driver_frontend.filter("status", function(){
+    return function(s) {
+        if(s == 1){
+            return "WAITING";
+        }
+        else if(s == 2 || s == 3){
+            return "ONGOING";
+        }
+        else{
+            return "COMPLETED";
+        }
+    };
+})

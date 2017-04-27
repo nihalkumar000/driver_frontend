@@ -1,7 +1,7 @@
 driver_frontend.service('apiService',function($http){
 
   this.getDashboardData = function(){
-    var dashboardDataUrl = 'http://localhost:8026/getDashboardData';
+    var dashboardDataUrl = 'http://14.139.56.19:8029/getDashboardData';
     return $http({
       method: 'POST',
       url : dashboardDataUrl,
@@ -25,7 +25,7 @@ driver_frontend.service('apiService',function($http){
   };
 
   this.getDriverAppData = function(driverId){
-    var driverAppUrl = "http://localhost:8026/getDriverAppData?driverId="+driverId;
+    var driverAppUrl = "http://14.139.56.19:8029/getDriverAppData?driverId="+driverId;
     return $http({
       method: 'POST',
       url : driverAppUrl,
@@ -49,7 +49,7 @@ driver_frontend.service('apiService',function($http){
   };
 
   this.rideNow = function(customerId){
-    var rideNowUrl = 'http://localhost:8026/requestRide';
+    var rideNowUrl = 'http://14.139.56.19:8029/requestRide';
     return $http({
       method: 'POST',
       url : rideNowUrl,
@@ -73,7 +73,7 @@ driver_frontend.service('apiService',function($http){
   };
 
   this.acceptRequest = function(requestId, driverId){
-    var acceptRequestUrl = 'http://localhost:8026/acceptRequest';
+    var acceptRequestUrl = 'http://14.139.56.19:8029/acceptRequest';
     return $http({
       method: 'POST',
       url : acceptRequestUrl,

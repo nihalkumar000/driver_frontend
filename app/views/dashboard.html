@@ -18,9 +18,9 @@
           <tr ng-repeat="data in dashboardData">
             <td>{{data.request_id}}</td>
             <td>{{data.customer_id}}</td>
-            <td>{{data.request_mins}}</td>
-            <td>{{data.status}}</td>
-            <td>{{data.driver_id}}</td>
+            <td>{{data.request_mins}} mins ago</td>
+            <td>{{data.status | status:data.status}}</td>
+            <td>{{data.driver_id || "None"}}</td>
           </tr>
           </tbody>
         </table>
