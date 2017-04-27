@@ -1,7 +1,7 @@
 driver_frontend.service('apiService',function($http){
 
-  this.getDashboardData = function(invoiceDated, city, token){
-    var dashboardDataUrl = 'https://invoice.jugnoo.in:8029/getDashboardData';
+  this.getDashboardData = function(){
+    var dashboardDataUrl = 'http://localhost:8026/getDashboardData';
     return $http({
       method: 'POST',
       url : dashboardDataUrl,

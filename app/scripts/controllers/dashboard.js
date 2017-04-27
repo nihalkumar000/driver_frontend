@@ -1,4 +1,4 @@
-driver_frontend.controller('dashboardCtrl', function ($http, $scope,$state, $stateParams, $rootScope, DTOptionsBuilder) {
+driver_frontend.controller('dashboardCtrl', function ($http, $scope,$state, $stateParams, $rootScope, DTOptionsBuilder, apiService) {
 
 
    $scope.dashboardData = [];
@@ -15,8 +15,9 @@ driver_frontend.controller('dashboardCtrl', function ($http, $scope,$state, $sta
       }
     );
   };
-
-
+  
+  $scope.getDataFromServer();
+  
 });
 
 
