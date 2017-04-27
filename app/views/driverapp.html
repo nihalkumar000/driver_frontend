@@ -15,22 +15,27 @@
         </tr>
         </thead>
         <tbody>
-          <td ng-repeat="data in driverData.waiting">
-            <div>Req Id: {{data.request_id}}  Cust Id : {{data.customer_id}}</div><br>
-            <div>  {{data.time_lapsed}}  mins ago</div><br>
-            <button ng-click="select()"><b>Select</b></button>
+        <tr ng-repeat="i in getMaxElems()">
+          <td ng-show="$index<driverData.waiting.length">
+            <div>Req Id: {{driverData.waiting[$index].request_id}}  Cust Id : {{driverData.waiting[$index].customer_id}}</div><br>
+            <div>  {{driverData.waiting[$index].request_mins}}  mins ago</div><br>
+            <button ng-click="acceptRide(driverData.waiting[$index].request_id)"><b>Select</b></button><br>
           </td>
-        <td ng-repeat="data in driverData.complete">
-          <div>Req Id: {{data.request_id}}  Cust Id : {{data.customer_id}}</div><br>
-          <div>Request: {{data.time_lapsed}} mins ago</div><br>
-          <td>Picked Up : {{data.picked_up}}</td>
-        </td>
-        <td ng-repeat="data in driverData.complete">
-          <div>Req Id: {{data.request_id}}  Cust Id : {{data.customer_id}}</div><br>
-          <div>Request: {{data.time_lapsed}} mins ago</div><br>
-          <td>Picked Up : {{data.picked_up}} mins ago</td><br>
-          <td>Complete : {{data.picked_up}} mins ago</td>
-        </td>
+          <td ng-show="!$index<driverData.waiting.length"></td>
+          <td ng-show="$index<driverData.ongoing.length">
+            <div>Req Id: {{driverData.ongoing[$index].request_id}}  Cust Id : {{driverData.ongoing[$index].customer_id}}</div><br>
+            <div>Request: {{driverData.ongoing[$index].request_mins}} mins ago</div><br>
+            <div>Picked Up : {{driverData.ongoing[$index].pickup_mins}}</div>
+          </td>
+          <td ng-show="!$index<driverData.ongoing.length"></td>
+          <td ng-show="$index<driverData.complete.length">
+            <div>Req Id: {{driverData.complete[$index].request_id}}  Cust Id : {{driverData.complete[$index].customer_id}}</div><br>
+            <div>Request: {{driverData.complete[$index].request_mins}} mins ago</div><br>
+          <div>Picked Up : {{driverData.complete[$index].pickup_mins}} mins ago</div><br>
+          <div>Complete : {{driverData.complete[$index].complete_mins}} mins ago</div>
+          </td>
+          <td ng-show="!$index<driverData.complete.length"></td>
+        </tr>
         </tbody>
       </table>
       </div>

@@ -1,13 +1,21 @@
 driver_frontend.controller('customerAppCtrl',function ($http,$q, $scope, $rootScope, apiService){
-  
+  $scope.customerId = "";
   $scope.rideNow = function(){
-    apiService.rideNow().then(
-        function (response) {
-          console.log(response);
-        },
-        function () {
-          console.log('err');
-        }
-    )
+    if($scope.customerId){
+        console.log($scope.customerId)
+       apiService.rideNow($scope.customerId).then(
+         function (response) {
+           console.log(response);
+           alert(response);
+         },
+          function (err) {
+           console.log('err');
+              alert(err);
+         });
+    }
+    else{
+        alert("Please enter a customerId");
+    }
   };
+
 });

@@ -25,7 +25,7 @@ driver_frontend.service('apiService',function($http){
   };
 
   this.getDriverAppData = function(driverId){
-    var driverAppUrl = "https://localhost:8029/getDriverAppData?driverId="+driverId;
+    var driverAppUrl = "http://localhost:8026/getDriverAppData?driverId="+driverId;
     return $http({
       method: 'POST',
       url : driverAppUrl,
@@ -69,6 +69,33 @@ driver_frontend.service('apiService',function($http){
         console.log(error);
         return error;
       }
+    );
+  };
+
+  this.acceptRequest = function(requestId, driverId){
+    var acceptRequestUrl = 'http://localhost:8026/acceptRequest';
+    return $http({
+      method: 'POST',
+      url : acceptRequestUrl,
+      data : {
+        "requestId" : requestId,
+        "driverId" : driverId
+      },
+      'headers': {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      transformRequest: function (data) {
+        return $.param(data);
+      }
+    }).then(
+        function(res){
+          console.log('got data in post request', res.data);
+          return res.data;
+        },
+        function(error){
+          console.log(error);
+          return error;
+        }
     );
   };
 
